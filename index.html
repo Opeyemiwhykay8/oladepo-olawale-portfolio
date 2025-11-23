@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLADEPO A'QUDUS OLAWALE | Architectural Technologist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2d3748;
+            --accent: #e53e3e;
+            --light: #f7fafc;
+            --dark: #2d3748;
+            --gray: #718096;
+            --gold: #d4af37;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 30px rgba(0,0,0,0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--accent);
+            margin-left: 5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 40px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            font-size: 0.95rem;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #0f1e3a 100%);
+            color: white;
+            padding: 180px 0 120px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,213.3C672,192,768,128,864,128C960,128,1056,192,1152,192C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin: 0 auto 40px;
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            line-height: 1.8;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            position: relative;
+            padding-bottom: 20px;
+            font-size: 2.2rem;
+        }
+        
+        .about-text h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+        
+        .skill-tag {
+            background-color: var(--light);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+        
+        .skill-tag:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .about-image {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            height: 500px;
+            background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-size: 1.2rem;
+            transition: transform 0.5s;
+        }
+        
+        .about-image:hover {
+            transform: translateY(-10px);
+        }
+        
+        /* Projects Section */
+        .projects {
+            background-color: #f8f9fa;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-header h2 {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 20px;
+            font-size: 2.5rem;
+        }
+        
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+        
+        .section-header p {
+            max-width: 600px;
+            margin: 20px auto 0;
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .project-image {
+            height: 240px;
+            background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .project-image:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.1) 100%);
+        }
+        
+        .project-content {
+            padding: 30px;
+        }
+        
+        .project-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0;
+        }
+        
+        .project-tag {
+            background-color: var(--light);
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        /* Resume Section */
+        .resume {
+            background-color: white;
+        }
+        
+        .resume-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .resume-section {
+            margin-bottom: 50px;
+        }
+        
+        .resume-section h3 {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        .resume-item {
+            margin-bottom: 25px;
+        }
+        
+        .resume-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .resume-meta {
+            color: var(--gray);
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        
+        .resume-list {
+            list-style-type: none;
+        }
+        
+        .resume-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .resume-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+        
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .skill-category {
+            margin-bottom: 20px;
+        }
+        
+        .skill-category h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: #f8f9fa;
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h3 {
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .form-group label {
+            font-weight: 500;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+        
+        .form-control {
+            padding: 15px 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 180px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .footer-logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .footer-logo span {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        /* PDF Viewer Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .modal-content {
+            background-color: white;
+            width: 95%;
+            max-width: 1000px;
+            height: 90%;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 25px;
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .modal-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: var(--accent);
+        }
+        
+        .modal-body {
+            flex: 1;
+            padding: 0;
+            overflow: hidden;
+        }
+        
+        .pdf-viewer {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1100px) {
+            .about-content, .contact-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 30px 0;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                transform: translateY(-150%);
+                transition: transform 0.4s ease;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            section {
+                padding: 80px 0;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">OLADEPO<span>OLAWA LE</span></div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Architectural Technologist</h1>
+                <p>Specializing in residential and commercial design with expertise in Revit, AutoCAD, and SolidWorks. Creating functional, beautiful spaces through detailed technical drawings and 3D modeling.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn">View Projects</a>
+                    <a href="#resume" class="btn btn-outline">View Resume</a>
+                    <a href="https://www.linkedin.com/in/a-qudus-olawale-75134a2b3" target="_blank" class="btn btn-outline">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Professional Profile</h2>
+                    <p>I am OLADEPO A'QUDUS OLAWALE, a dedicated Architectural Apprentice with hands-on experience in residential and commercial design and construction documentation. My expertise lies in creating detailed technical drawings and 3D models using Revit, AutoCAD, and SolidWorks.</p>
+                    <p>Through my apprenticeship at Olakaz Construction Companies, I have developed comprehensive construction document sets for various duplex projects, focusing on efficient space planning, functional zoning, and technical precision.</p>
+                    <div class="skills">
+                        <span class="skill-tag">Revit</span>
+                        <span class="skill-tag">AutoCAD</span>
+                        <span class="skill-tag">SolidWorks</span>
+                        <span class="skill-tag">Construction Documentation</span>
+                        <span class="skill-tag">3D Modeling</span>
+                        <span class="skill-tag">Space Planning</span>
+                        <span class="skill-tag">Technical Detailing</span>
+                        <span class="skill-tag">Residential Design</span>
+                        <span class="skill-tag">Commercial Design</span>
+                        <span class="skill-tag">Duplex Projects</span>
+                        <span class="skill-tag">Building Codes</span>
+                        <span class="skill-tag">Site Analysis</span>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <!-- Replace this with your actual photo -->
+                    <div style="text-align: center; padding: 20px;">
+                        <i class="fas fa-user" style="font-size: 3rem; margin-bottom: 15px; color: #a0aec0;"></i>
+                        <p>OLADEPO A'QUDUS OLAWALE</p>
+                        <p style="font-size: 1rem; margin-top: 10px;">Architectural Technologist</p>
+                        <p style="font-size: 0.9rem; margin-top: 5px;">Oyo State, Nigeria</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Architecture Portfolio</h2>
+                <p>A collection of residential duplex projects showcasing technical expertise in Revit, AutoCAD, and SolidWorks</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-building" style="font-size: 3rem; color: #a0aec0;"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>4-Bedroom Standalone Duplex</h3>
+                        <p>A spacious family residence with modern design elements and efficient space utilization. Features include an open-plan living area, dedicated home office, and master suite with walk-in closet.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Residential</span>
+                            <span class="project-tag">Duplex</span>
+                            <span class="project-tag">4-Bedroom</span>
+                            <span class="project-tag">Modern Design</span>
+                        </div>
+                        <button class="btn view-pdf" data-pdf="project1.pdf">View Project PDF</button>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-home" style="font-size: 3rem; color: #a0aec0;"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Duplex Residential Design</h3>
+                        <p>Efficient circulation patterns and functional zoning for optimal living experience. This design maximizes natural light and ventilation while maintaining privacy between living and sleeping areas.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Residential</span>
+                            <span class="project-tag">Duplex</span>
+                            <span class="project-tag">Functional Design</span>
+                            <span class="project-tag">Space Planning</span>
+                        </div>
+                        <button class="btn view-pdf" data-pdf="project2.pdf">View Project PDF</button>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-city" style="font-size: 3rem; color: #a0aec0;"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Four Bedroom Duplex</h3>
+                        <p>Family-oriented design with privacy considerations and natural lighting optimization. Includes separate children's wing, spacious kitchen with pantry, and covered outdoor entertainment area.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Residential</span>
+                            <span class="project-tag">Duplex</span>
+                            <span class="project-tag">4-Bedroom</span>
+                            <span class="project-tag">Family Home</span>
+                        </div>
+                        <button class="btn view-pdf" data-pdf="project3.pdf">View Project PDF</button>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-house-user" style="font-size: 3rem; color: #a0aec0;"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>3-Bedroom Duplex</h3>
+                        <p>Compact but comfortable design with smart storage solutions and budget-conscious approach. Optimized layout provides all essential amenities in an efficient footprint without compromising on quality.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Residential</span>
+                            <span class="project-tag">Duplex</span>
+                            <span class="project-tag">3-Bedroom</span>
+                            <span class="project-tag">Compact Design</span>
+                        </div>
+                        <button class="btn view-pdf" data-pdf="project4.pdf">View Project PDF</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section class="resume" id="resume">
+        <div class="container">
+            <div class="section-header">
+                <h2>Professional Resume</h2>
+                <p>Detailed overview of my experience, skills, and qualifications</p>
+            </div>
+            <div class="resume-content">
+                <div class="resume-section">
+                    <h3>Professional Summary</h3>
+                    <p>Detail-oriented Architectural Apprentice with hands-on experience in residential and commercial design and construction documentation. Proficient in creating detailed technical drawings and 3D models using Revit, AutoCAD, and SolidWorks. Demonstrated ability to develop comprehensive construction document sets for duplex projects. Seeking to contribute technical drafting expertise and design support to residential and commercial architecture projects.</p>
+                </div>
+                
+                <div class="resume-section">
+                    <h3>Technical Skills</h3>
+                    <div class="skills-list">
+                        <div class="skill-category">
+                            <h4>Design Software</h4>
+                            <p>Revit (Advanced), AutoCAD, SolidWorks</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Technical Documentation</h4>
+                            <p>Construction Documents, Detailing, Floor Plans, Elevations, Sections, Schedules</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Design Development</h4>
+                            <p>3D Modeling, Space Planning, Schematic Design, Design Development</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Project Types</h4>
+                            <p>Residential Duplex, Single-Family Homes, Multi-Unit Housing, Commercial Buildings</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="resume-section">
+                    <h3>Project Experience</h3>
+                    
+                    <div class="resume-item">
+                        <h4>4-BEDROOM STANDALONE DUPLEX</h4>
+                        <div class="resume-meta">Architectural Apprentice | 2022</div>
+                        <ul class="resume-list">
+                            <li>Developed complete construction document set using AutoCAD</li>
+                            <li>Created detailed Revit model including structural components and interior layouts</li>
+                            <li>Produced floor plans, elevations, and building sections for client approval</li>
+                            <li>Coordinated room layouts for optimal space utilization and natural lighting</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resume-item">
+                        <h4>DUPLEX RESIDENTIAL PROJECT</h4>
+                        <div class="resume-meta">Architectural Apprentice | 2023</div>
+                        <ul class="resume-list">
+                            <li>Generated comprehensive technical drawings for construction</li>
+                            <li>Designed efficient circulation patterns and functional zoning</li>
+                            <li>Created detailed staircase sections and window details</li>
+                            <li>Developed multiple facade design options for client presentation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resume-item">
+                        <h4>FOUR BEDROOM DUPLEX</h4>
+                        <div class="resume-meta">Architectural Apprentice | 2023</div>
+                        <ul class="resume-list">
+                            <li>Produced full set of architectural drawings including reflected ceiling plans</li>
+                            <li>Developed door and window schedules, room finish schedules</li>
+                            <li>Created interior elevations for kitchen and feature walls</li>
+                            <li>Optimized bedroom layouts for privacy and functionality</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resume-item">
+                        <h4>3 BEDROOM DUPLEX</h4>
+                        <div class="resume-meta">Architectural Apprentice | 2023</div>
+                        <ul class="resume-list">
+                            <li>Designed space-efficient floor plans maximizing compact area</li>
+                            <li>Developed construction details for cost-effective building solutions</li>
+                            <li>Designed multi-functional spaces with smart storage solutions</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="resume-section">
+                    <h3>Professional Experience</h3>
+                    <div class="resume-item">
+                        <h4>Architectural Apprentice</h4>
+                        <div class="resume-meta">Olakaz Construction Companies, Oyo State, Nigeria | 2022 - Present</div>
+                        <ul class="resume-list">
+                            <li>Assisted in developing construction documents for residential projects</li>
+                            <li>Created and updated Revit models for duplex developments</li>
+                            <li>Produced technical drawings including plans, elevations, and sections</li>
+                            <li>Conducted site measurements and verified as-built conditions</li>
+                            <li>Implemented red-line markups and design revisions efficiently</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="resume-section">
+                    <h3>Education & Training</h3>
+                    <div class="resume-item">
+                        <h4>Architectural Apprenticeship</h4>
+                        <div class="resume-meta">Olakaz Construction Companies, Oyo State, Nigeria | 2022-2023</div>
+                        <ul class="resume-list">
+                            <li>Practical training in architectural drafting and design</li>
+                            <li>Hands-on experience with construction documentation</li>
+                            <li>Professional development in client communication and project coordination</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="resume-section">
+                    <h3>References</h3>
+                    <p>Available upon request</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Let's discuss your next architectural project or potential collaboration</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+234 916 223 9979</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>oqudus50@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <p>linkedin.com/in/a-qudus-olawale</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Oyo State, Nigeria</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" class="form-control" placeholder="Enter subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" class="form-control" placeholder="Enter your message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">OLADEPO<span>OLAWA LE</span></div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/a-qudus-olawale-75134a2b3" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-behance"></i></a>
+                </div>
+                <p class="copyright">&copy; 2023 Oladepo A'Qudus Olawale. All Rights Reserved.<br>Architectural Technologist | Revit, AutoCAD & SolidWorks Specialist</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PDF Viewer Modal -->
+    <div class="modal" id="pdfModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="modalTitle">Project PDF</div>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <iframe class="pdf-viewer" id="pdfViewer" src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+
+        // PDF Viewer Functionality
+        const pdfModal = document.getElementById('pdfModal');
+        const pdfViewer = document.getElementById('pdfViewer');
+        const modalTitle = document.getElementById('modalTitle');
+        const closeModal = document.querySelector('.close-modal');
+        
+        document.querySelectorAll('.view-pdf').forEach(button => {
+            button.addEventListener('click', function() {
+                const pdfFile = this.getAttribute('data-pdf');
+                const projectName = this.parentElement.querySelector('h3').textContent;
+                
+                pdfViewer.src = `pdfs/${pdfFile}`;
+                modalTitle.textContent = projectName;
+                pdfModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        closeModal.addEventListener('click', function() {
+            pdfModal.style.display = 'none';
+            pdfViewer.src = '';
+            document.body.style.overflow = 'auto';
+        });
+        
+        pdfModal.addEventListener('click', function(e) {
+            if(e.target === pdfModal) {
+                pdfModal.style.display = 'none';
+                pdfViewer.src = '';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            
+            // Show success message
+            alert(`Thank you ${name}! Your message has been sent successfully. I will get back to you at ${email} soon.`);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Change navbar style on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 30px rgba(0,0,0,0.1)';
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.boxShadow = '0 2px 30px rgba(0,0,0,0.08)';
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Add animation to elements when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.project-card, .about-text, .about-image, .resume-section').forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
